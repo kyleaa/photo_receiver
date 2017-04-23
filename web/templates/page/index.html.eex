@@ -1,6 +1,11 @@
 <div class="row">
-    <a id="camera-button" class="btn btn-lg btn-success"><i class="fa fa-camera" aria-hidden="true"></i> Take Photo</a>
-    <a id="browse-button" class="btn btn-lg btn-primary"><i class="fa fa-folder-open-o" aria-hidden="true"></i> View Photos in Finder</a>
+  <div class="col-md-6 pull-left">
+    <a id="camera-button" class="btn btn-success"><i class="fa fa-camera" aria-hidden="true"></i> Take Photo</a>
+    <a id="browse-button" class="btn btn-primary"><i class="fa fa-folder-open-o" aria-hidden="true"></i> View Photos in Finder</a>
+  </div>
+  <div class="col-md-6 pull-right">
+    <label> Flash <input type="checkbox" id='flash' checked data-toggle="toggle"></label>
+  </div>
 </div>
 <div class="row">
 <table class="table" id="photos">
@@ -12,6 +17,7 @@
       <td>
         <a class='print btn btn-lg git-merge' data-printer='SELPHY_A'><i class="icon-git-merge"></i> Print to A</a><br />
         <a class='print btn btn-lg git-branch' data-printer='SELPHY_B'><i class="icon-git-branch"></i> Print to B</a>
+        <a class='print btn btn-lg git-pull-request-closed' data-printer='SELPHY_C'><i class="icon-git-pull-request"></i> Print to C</a>
       </td>
     </tr>
     <%= for photo <- @photos do %>
@@ -21,6 +27,7 @@
       <td>
         <a class='print btn btn-lg git-merge' data-printer='SELPHY_A'><i class="icon-git-merge"></i> Print to A</a><br />
         <a class='print btn btn-lg git-branch' data-printer='SELPHY_B'><i class="icon-git-branch"></i> Print to B</a>
+        <a class='print btn btn-lg git-pull-request-closed' data-printer='SELPHY_C'><i class="icon-git-pull-request"></i> Print to C</a>
       </td>
     </tr>
     <% end %>

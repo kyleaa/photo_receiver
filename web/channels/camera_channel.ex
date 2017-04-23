@@ -9,10 +9,10 @@ defmodule PhotoReceiver.CameraChannel do
     {:error, %{reason: "unauthorized"}}
   end
 
-  def handle_in("capture", _body, socket) do
+  def handle_in("capture", %{"flash" => flash}, socket) do
     id = UUID.uuid4()
-    Logger.debug "capture received #{id}"
-    broadcast! socket, "capture", %{id: id}
+    Logger.debug "capture received #{id} flash #{inspect flash}"
+    broadcast! socket, "capture", %{id: id, flash: flash}
     {:noreply, socket}
   end
 
@@ -32,7 +32,7 @@ defmodule PhotoReceiver.CameraChannel do
     {:noreply, socket}
   end
 
-  def handle_in("browse", body, socket) do
+  def handle_in("browse", _body, socket) do
     System.cmd "open", ["files"]
     {:noreply, socket}
   end

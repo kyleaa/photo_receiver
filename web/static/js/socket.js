@@ -13,7 +13,8 @@ socket.connect()
 let channel = socket.channel("camera:all", {})
 
 $('#camera-button').click(function() {
-  channel.push("capture");
+  let flash = $('#flash').is(':checked')
+  channel.push("capture", {flash: flash});
 });
 $('#browse-button').click(function() {
   channel.push("browse");
