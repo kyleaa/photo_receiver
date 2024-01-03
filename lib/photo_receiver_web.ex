@@ -26,7 +26,7 @@ defmodule PhotoReceiverWeb do
     quote do
       use Phoenix.Controller, namespace: PhotoReceiverWeb
 
-      import PhotoReceiverWeb.Router.Helpers
+      alias PhotoReceiverWeb.Router.Helpers, as: Routes
       import PhotoReceiverWeb.Gettext
     end
   end
@@ -41,7 +41,7 @@ defmodule PhotoReceiverWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import PhotoReceiverWeb.Router.Helpers
+      alias PhotoReceiverWeb.Router.Helpers, as: Routes
       import PhotoReceiverWeb.ErrorHelpers
       import PhotoReceiverWeb.Gettext
     end

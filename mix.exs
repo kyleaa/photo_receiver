@@ -30,17 +30,16 @@ defmodule PhotoReceiver.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.3"},
+    [{:phoenix, "~> 1.4.0"},
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_html, "~> 2.4"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:uuid, "~> 1.1" },
      {:timex, "~> 3.0.0"},
-     {:plug, "~> 1.15"},
-     {:poison, "~> 2.2"},
-     {:cowboy, "~> 1.0"},
-     {:plug_cowboy, "~> 1.0"}
+     {:jason, "~> 1.0"},
+     {:plug, "~> 1.7"},
+     {:plug_cowboy, "~> 2.0"}
     ]
   end
 
