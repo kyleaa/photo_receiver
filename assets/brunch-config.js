@@ -15,7 +15,7 @@ exports.config = {
       // https://github.com/brunch/brunch/tree/master/docs#concatenation
       order: {
         before: [
-          "web/static/vendor/jquery-3.1.0.min.js",
+          "vendor/jquery-3.1.0.min.js",
           // "web/static/vendor/js/jquery-3.1.0.min.js",
         ]
       }
@@ -23,7 +23,7 @@ exports.config = {
     stylesheets: {
       joinTo: "css/app.css",
       order: {
-        after: ["web/static/css/app.css"] // concat app.css last
+        after: ["css/app.css"] // concat app.css last
       }
     },
     templates: {
