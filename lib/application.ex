@@ -7,6 +7,7 @@ defmodule PhotoReceiver do
     import Supervisor.Spec
 
     children = [
+      {Phoenix.PubSub, name: PhotoReceiverWeb.PubSub},
       # Start the endpoint when the application starts
       supervisor(PhotoReceiverWeb.Endpoint, [])
       # Start the Ecto repository

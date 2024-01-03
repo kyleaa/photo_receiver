@@ -5,7 +5,7 @@ defmodule PhotoReceiver.Mixfile do
     [
       app: :photo_receiver,
       version: "0.0.1",
-      elixir: "~> 1.2",
+      elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix] ++ Mix.compilers(),
       build_embedded: Mix.env() == :prod,
@@ -34,16 +34,16 @@ defmodule PhotoReceiver.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.4.0"},
-      {:phoenix_pubsub, "~> 1.0"},
-      {:phoenix_html, "~> 2.4"},
+      {:phoenix, "~> 1.5.0"},
+      {:phoenix_pubsub, "~> 2.0"},
+      {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:uuid, "~> 1.1"},
       {:timex, "~> 3.0.0"},
       {:jason, "~> 1.0"},
       {:plug, "~> 1.7"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.1"}
     ]
   end
 

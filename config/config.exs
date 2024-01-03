@@ -11,7 +11,7 @@ config :photo_receiver, PhotoReceiverWeb.Endpoint,
   root: Path.dirname(__DIR__),
   secret_key_base: "eCgQLkxfMMPvp+aPQw1NLpWnkbjXblGdDL+AftczRP5ABAa/S7iRMn97XTJHvbbg",
   render_errors: [view: PhotoReceiverWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: PhotoReceiverWeb.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub_server: PhotoReceiverWeb.PubSub
 
 # Configures Elixir's Logger
 config :logger, :console,
