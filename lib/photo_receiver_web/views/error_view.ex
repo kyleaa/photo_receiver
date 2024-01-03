@@ -1,5 +1,5 @@
-defmodule PhotoReceiver.ErrorView do
-  use PhotoReceiver.Web, :view
+defmodule PhotoReceiverWeb.ErrorView do
+  use PhotoReceiverWeb, :view
 
   def render("404.html", _assigns) do
     "Page not found"

@@ -1,4 +1,4 @@
-defmodule PhotoReceiver.ChannelCase do
+defmodule PhotoReceiverWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -27,7 +27,7 @@ defmodule PhotoReceiver.ChannelCase do
 
 
       # The default endpoint for testing
-      @endpoint PhotoReceiver.Endpoint
+      @endpoint PhotoReceiverWeb.Endpoint
     end
   end
 

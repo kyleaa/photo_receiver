@@ -1,5 +1,5 @@
-defmodule PhotoReceiver.ChangesetView do
-  use PhotoReceiver.Web, :view
+defmodule PhotoReceiverWeb.ChangesetView do
+  use PhotoReceiverWeb, :view
 
   @doc """
   Traverses and translates changeset errors.

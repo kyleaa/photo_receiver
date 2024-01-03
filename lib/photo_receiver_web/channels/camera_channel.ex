@@ -1,4 +1,4 @@
-defmodule PhotoReceiver.CameraChannel do
+defmodule PhotoReceiverWeb.CameraChannel do
   use Phoenix.Channel
   require Logger
 

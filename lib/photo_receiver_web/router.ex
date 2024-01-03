@@ -1,5 +1,5 @@
-defmodule PhotoReceiver.Router do
-  use PhotoReceiver.Web, :router
+defmodule PhotoReceiverWeb.Router do
+  use PhotoReceiverWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,19 +13,19 @@ defmodule PhotoReceiver.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", PhotoReceiver do
+  scope "/", PhotoReceiverWeb do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
   end
 
-  scope "/", PhotoReceiver do
+  scope "/", PhotoReceiverWeb do
     pipe_through :api
     post "/upload", UploadController, :upload
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PhotoReceiver do
+  # scope "/api", PhotoReceiverWeb do
   #   pipe_through :api
   # end
 end

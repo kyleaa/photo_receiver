@@ -1,4 +1,4 @@
-defmodule PhotoReceiver.ErrorHelpers do
+defmodule PhotoReceiverWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -27,9 +27,9 @@ defmodule PhotoReceiver.ErrorHelpers do
     #     dngettext "errors", "1 file", "%{count} files", count
     #
     if count = opts[:count] do
-      Gettext.dngettext(PhotoReceiver.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(PhotoReceiverWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(PhotoReceiver.Gettext, "errors", msg, opts)
+      Gettext.dgettext(PhotoReceiverWeb.Gettext, "errors", msg, opts)
     end
   end
 

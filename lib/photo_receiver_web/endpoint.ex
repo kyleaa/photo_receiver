@@ -1,7 +1,7 @@
-defmodule PhotoReceiver.Endpoint do
+defmodule PhotoReceiverWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :photo_receiver
 
-  socket "/socket", PhotoReceiver.UserSocket
+  socket "/socket", PhotoReceiverWeb.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -35,5 +35,5 @@ defmodule PhotoReceiver.Endpoint do
     key: "_photo_receiver_key",
     signing_salt: "zE4QqrPr"
 
-  plug PhotoReceiver.Router
+  plug PhotoReceiverWeb.Router
 end

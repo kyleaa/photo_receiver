@@ -1,6 +1,6 @@
-defmodule PhotoReceiver.UploadController do
-  use PhotoReceiver.Web, :controller
-  alias PhotoReceiver.Endpoint
+defmodule PhotoReceiverWeb.UploadController do
+  use PhotoReceiverWeb, :controller
+  alias PhotoReceiverWeb.Endpoint
   require Logger
 
   def upload(conn, %{"image" => %{ "content_type" => "image/jpeg", "id" => id, "file_data" => data}}) do

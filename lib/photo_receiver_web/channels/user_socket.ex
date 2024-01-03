@@ -1,8 +1,8 @@
-defmodule PhotoReceiver.UserSocket do
+defmodule PhotoReceiverWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  channel "camera:*", PhotoReceiver.CameraChannel
+  channel "camera:*", PhotoReceiverWeb.CameraChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

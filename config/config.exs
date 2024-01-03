@@ -6,13 +6,12 @@
 use Mix.Config
 
 # Configures the endpoint
-config :photo_receiver, PhotoReceiver.Endpoint,
+config :photo_receiver, PhotoReceiverWeb.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "eCgQLkxfMMPvp+aPQw1NLpWnkbjXblGdDL+AftczRP5ABAa/S7iRMn97XTJHvbbg",
-  render_errors: [view: PhotoReceiver.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: PhotoReceiver.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  render_errors: [view: PhotoReceiverWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: PhotoReceiverWeb.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -21,4 +20,4 @@ config :logger, :console,
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"

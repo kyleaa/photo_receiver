@@ -1,5 +1,5 @@
-defmodule PhotoReceiver.PageView do
-  use PhotoReceiver.Web, :view
+defmodule PhotoReceiverWeb.PageView do
+  use PhotoReceiverWeb, :view
 
   def uuid, do: UUID.uuid4()
 

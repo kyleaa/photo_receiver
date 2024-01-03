@@ -1,4 +1,4 @@
-defmodule PhotoReceiver.Gettext do
+defmodule PhotoReceiverWeb.Gettext do
   @moduledoc """
   A module providing Internationalization with a gettext-based API.
 

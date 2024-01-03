@@ -1,3 +1,3 @@
-defmodule PhotoReceiver.LayoutViewTest do
-  use PhotoReceiver.ConnCase, async: true
+defmodule PhotoReceiverWeb.LayoutViewTest do
+  use PhotoReceiverWeb.ConnCase, async: true
 end

@@ -8,7 +8,7 @@ defmodule PhotoReceiver do
 
     children = [
       # Start the endpoint when the application starts
-      supervisor(PhotoReceiver.Endpoint, []),
+      supervisor(PhotoReceiverWeb.Endpoint, []),
       # Start the Ecto repository
       # supervisor(PhotoReceiver.Repo, []),
       # Here you could define other workers and supervisors as children
@@ -24,7 +24,7 @@ defmodule PhotoReceiver do
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    PhotoReceiver.Endpoint.config_change(changed, removed)
+    PhotoReceiverWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

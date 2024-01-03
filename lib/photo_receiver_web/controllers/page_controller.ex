@@ -1,5 +1,5 @@
-defmodule PhotoReceiver.PageController do
-  use PhotoReceiver.Web, :controller
+defmodule PhotoReceiverWeb.PageController do
+  use PhotoReceiverWeb, :controller
 
   @page_size 10
 
