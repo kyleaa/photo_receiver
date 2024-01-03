@@ -8,7 +8,7 @@ defmodule PhotoReceiver do
 
     children = [
       # Start the endpoint when the application starts
-      supervisor(PhotoReceiverWeb.Endpoint, []),
+      supervisor(PhotoReceiverWeb.Endpoint, [])
       # Start the Ecto repository
       # supervisor(PhotoReceiver.Repo, []),
       # Here you could define other workers and supervisors as children
