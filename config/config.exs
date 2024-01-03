@@ -10,7 +10,7 @@ config :photo_receiver, PhotoReceiver.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "eCgQLkxfMMPvp+aPQw1NLpWnkbjXblGdDL+AftczRP5ABAa/S7iRMn97XTJHvbbg",
-  render_errors: [accepts: ~w(html json)],
+  render_errors: [view: PhotoReceiver.ErrorView, accepts: ~w(html json)],
   pubsub: [name: PhotoReceiver.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
@@ -22,8 +22,3 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
-
-# Configure phoenix generators
-config :phoenix, :generators,
-  migration: true,
-  binary_id: false

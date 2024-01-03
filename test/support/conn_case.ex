@@ -23,7 +23,7 @@ defmodule PhotoReceiver.ConnCase do
       alias PhotoReceiver.Repo
       import Ecto
       import Ecto.Changeset
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
 
       import PhotoReceiver.Router.Helpers
 
@@ -34,9 +34,9 @@ defmodule PhotoReceiver.ConnCase do
 
   setup tags do
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(PhotoReceiver.Repo, [])
+      Ecto.Adapters.SQL.Sandbox.mode(PhotoReceiver.Repo, {:shared, self()})
     end
 
-    {:ok, conn: Phoenix.ConnTest.conn()}
+    {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end

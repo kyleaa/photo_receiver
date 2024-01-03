@@ -26,10 +26,11 @@ defmodule PhotoReceiver.ErrorHelpers do
     #
     #     dngettext "errors", "1 file", "%{count} files", count
     #
-    Gettext.dngettext(PhotoReceiver.Gettext, "errors", msg, msg, opts[:count], opts)
+    if count = opts[:count] do
+      Gettext.dngettext(PhotoReceiver.Gettext, "errors", msg, msg, count, opts)
+    else
+      Gettext.dgettext(PhotoReceiver.Gettext, "errors", msg, opts)
+    end
   end
 
-  def translate_error(msg) do
-    Gettext.dgettext(PhotoReceiver.Gettext, "errors", msg)
-  end
 end

@@ -4,13 +4,13 @@ defmodule PhotoReceiver.Mixfile do
   def project do
     [app: :photo_receiver,
      version: "0.0.1",
-     elixir: "~> 1.0",
+     elixir: "~> 1.2",
      elixirc_paths: elixirc_paths(Mix.env),
-     compilers: [:phoenix, :gettext] ++ Mix.compilers,
+     compilers: [:phoenix] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     aliases: aliases,
-     deps: deps]
+     aliases: aliases(),
+     deps: deps()]
   end
 
   # Configuration for the OTP application.
@@ -30,13 +30,18 @@ defmodule PhotoReceiver.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.1.5"},
+    [{:phoenix, "~> 1.2"},
+     {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_html, "~> 2.4"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:gettext, "~> 0.9"},
-     { :uuid, "~> 1.1" },
+     {:gettext, "~> 0.11"},
+     {:uuid, "~> 1.1" },
      {:timex, "~> 3.0.0"},
-     {:cowboy, "~> 1.0"}]
+     {:plug, "~> 1.15"},
+     {:poison, "~> 2.2"},
+     {:cowboy, "~> 1.0"},
+     {:plug_cowboy, "~> 1.0"}
+    ]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
@@ -47,6 +52,7 @@ defmodule PhotoReceiver.Mixfile do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     ["ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-     "ecto.reset": ["ecto.drop", "ecto.setup"]]
+    "ecto.reset": ["ecto.drop", "ecto.setup"],
+    "test": ["ecto.create --quiet", "ecto.migrate", "test"]]
   end
 end
